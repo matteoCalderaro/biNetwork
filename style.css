@@ -28,7 +28,7 @@
   padding-left: 30px;
 }
 .sidebar-submenu {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 /* Separators */
@@ -60,4 +60,12 @@ font-family: FontAwesome;
 display: inline;
 text-align: right;
 padding-left: 10px;
+}
+
+.list-group-item{
+  margin-bottom: 0;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
 }
