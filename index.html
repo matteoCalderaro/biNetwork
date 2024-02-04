@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- <script src="/main.js"></script> -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <!-- NEW -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
   <style>
     #body-row {
   margin-left:0;
@@ -88,130 +96,108 @@ padding-left: 10px;
 <body>
 
 
-<!-- Bootstrap row -->
-<div class="row" id="body-row">
-  <!-- Sidebar -->
-  <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
-      <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
-      <!-- Bootstrap List Group -->
-      <ul class="list-group">
-            <!-- Separator with title -->
-            <!-- <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-                <small>MAIN MENU</small>
-            </li> -->
-            <!-- /END Separator -->
+    <div class="row" id="body-row">
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
 
-            <!-- CONTROLLO DI GESTIONE -->
-            <a href="#submenu1" data-toggle="collapse" aria-expanded="false" 
-                class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
-                >
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <!-- <span class="fa fa-dashboard fa-fw mr-3"></span> -->
-                    <i class="fa-regular fa-bookmark"></i>
-                    <span class="menu-collapsed">Controllo di Gestione</span>
-                    <span class="submenu-icon ml-auto"></span>
-                </div>
-            </a>
-            <!-- Submenu content -->
-            <div id='submenu1' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Breve termine</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Fonte Impieghi</span>
-                </a>
+            <div class="accordion" id="accordionExample">
+
+                <ul class="list-group"> 
+                    
+
+                       
+                        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" 
+                            class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+                            >
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa-regular fa-bookmark"></i>
+                                <span class="menu-collapsed">Controllo di Gestione</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                        
+                        <div id='submenu1' class="collapse" data-parent="#accordionExample">
+                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                                <span class="menu-collapsed">Breve termine</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                                <span class="menu-collapsed">Fonte Impieghi</span>
+                            </a>
+                        </div>
+
+                    
+
+                  
+
+                        <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <i class="fa-regular fa-bookmark"></i>
+                                <span class="menu-collapsed">Trading</span>
+                                <span class="submenu-icon ml-auto"></span>
+                            </div>
+                        </a>
+                        
+                        <div id='submenu2' class="collapse" data-parent="#accordionExample">
+                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                                <span class="menu-collapsed">Lavagna Open Position</span>
+                            </a>
+                        </div>
+
+                    
+    
+    
+                </ul>
+
             </div>
+        </div>
+    </div>
 
-            <!-- TRADING -->
-            <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <!-- <span class="fa fa-user fa-fw mr-3"></span> -->
-                    <i class="fa-regular fa-bookmark"></i>
-                    <span class="menu-collapsed">Trading</span>
-                    <span class="submenu-icon ml-auto"></span>
-                </div>
-            </a>
-            <!-- Submenu content -->
-            <div id='submenu2' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Lavagna Open Position</span>
-                </a>
+
+
+    <!-- <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Collapsible Group Item #1
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
             </div>
-
-            <!-- FORECAST -->
-            <a href="#submenu3" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <!-- <span class="fa fa-user fa-fw mr-3"></span> -->
-                    <i class="fa-regular fa-bookmark"></i>
-                    <span class="menu-collapsed">Forecast</span>
-                    <span class="submenu-icon ml-auto"></span>
-                </div>
-            </a>
-            <!-- Submenu content -->
-            <div id='submenu3' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Forecast</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Preconsuntivo</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Cluster</span>
-                </a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Collapsible Group Item #2
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              Some placeholder content for the second accordion panel. This panel is hidden by default.
             </div>
-
-            <!-- UNITA DI PRODUZIONE -->
-            <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <!-- <span class="fa fa-user fa-fw mr-3"></span> -->
-                    <i class="fa-regular fa-bookmark"></i>
-                    <span class="menu-collapsed">Unità di produzione</span>
-                    <span class="submenu-icon ml-auto"></span>
-                </div>
-            </a>
-            <!-- Submenu content -->
-            <div id='submenu4' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Rebuyer</span>
-                </a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Collapsible Group Item #3
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
             </div>
-
-            <!-- GAS -->
-            <a href="#submenu5" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <!-- <span class="fa fa-user fa-fw mr-3"></span> -->
-                    <i class="fa-regular fa-bookmark"></i>
-                    <span class="menu-collapsed">Gas</span>
-                    <span class="submenu-icon ml-auto"></span>
-                </div>
-            </a>
-            <!-- Submenu content -->
-            <div id='submenu5' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Previsioni</span>
-                </a>
-            </div>
-
-
-            
-
-
-
-
-       
-      </ul><!-- List Group END-->
-  </div><!-- sidebar-container END -->
-  <!-- MAIN -->
-
-</div><!-- body-row END -->
-
-
-
-
-
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="/main.js"></script> -->
+          </div>
+        </div>
+    </div> -->
 
 </body>
 </html>
