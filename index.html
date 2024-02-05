@@ -4,200 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- NEW -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
-
   <style>
-    #body-row {
-  margin-left:0;
-  margin-right:0;
-}
-#sidebar-container {
-  min-height: 100vh;   
-  background-color: #333;
-  padding: 0;
-}
-
-/* Sidebar sizes when expanded and expanded */
-.sidebar-expanded {
-  width: 230px;
-}
-.sidebar-collapsed {
-  width: 60px;
-}
-
-/* Menu item*/
-#sidebar-container .list-group a {
-  height: 50px;
-  color: rgb(131, 131, 131);
-}
-
-/* Submenu item*/
-#sidebar-container .list-group .sidebar-submenu a {
-  height: 45px;
-  padding-left: 30px;
-}
-.sidebar-submenu {
-  font-size: 1.5rem;
-}
-
-/* Separators */
-.sidebar-separator-title {
-  background-color: #333;
-  height: 35px;
-}
-.sidebar-separator {
-  background-color: #333;
-  height: 25px;
-}
-.logo-separator {
-  background-color: #333;    
-  height: 60px;
-}
-
-/* Closed submenu icon */
-#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
-content: " \f0d7";
-font-family: FontAwesome;
-display: inline;
-text-align: right;
-padding-left: 10px;
-}
-/* Opened submenu icon */
-#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
-content: " \f0da";
-font-family: FontAwesome;
-display: inline;
-text-align: right;
-padding-left: 10px;
-}
-
-.list-group-item{
-  margin-bottom: 0;
-  border-bottom-right-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-  border-top-left-radius: 0px !important;
-}
+      .container{
+        height: 50px;
+        background-color: red;
+        transition: transform 1000ms ease 3ms;
+      }
+      /* .modal-container{
+        display: none;
+      } */
+      /* .modal-container.show{
+        animation: show 1s ease-out;
+        
+      }
+      .modal-container.hide{
+        animation: hide 1s ease-out;
+        
+      } */
+      .container.matteo{
+        transform: scaleY(0);
+      }
+     
+      
+    
   </style>
 </head>
-<body>
+  <body>
 
+    <button>Click</button>
 
-    <div class="row" id="body-row">
-        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+      <div class="container">
+          
+      </div>
+      <div style="background-color: green; height: 1000px;">
+          
+      </div>
 
-            <div class="accordion" id="accordionExample">
+  </body>
+  <script>
 
-                <ul class="list-group"> 
-                    
-
-                       
-                        <a href="#submenu1" data-toggle="collapse" aria-expanded="false" 
-                            class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
-                            >
-                            <div class="d-flex w-100 justify-content-start align-items-center">
-                                <i class="fa-regular fa-bookmark"></i>
-                                <span class="menu-collapsed">Controllo di Gestione</span>
-                                <span class="submenu-icon ml-auto"></span>
-                            </div>
-                        </a>
-                        
-                        <div id='submenu1' class="collapse" data-parent="#accordionExample">
-                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                                <span class="menu-collapsed">Breve termine</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                                <span class="menu-collapsed">Fonte Impieghi</span>
-                            </a>
-                        </div>
-
-                    
-
-                  
-
-                        <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-start align-items-center">
-                                <i class="fa-regular fa-bookmark"></i>
-                                <span class="menu-collapsed">Trading</span>
-                                <span class="submenu-icon ml-auto"></span>
-                            </div>
-                        </a>
-                        
-                        <div id='submenu2' class="collapse" data-parent="#accordionExample">
-                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                                <span class="menu-collapsed">Lavagna Open Position</span>
-                            </a>
-                        </div>
-
-                    
-    
-    
-                </ul>
-
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- <div class="accordion" id="accordionExample">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Collapsible Group Item #1
-              </button>
-            </h2>
-          </div>
+    let container = document.querySelector(".container")
+    let btn = document.querySelector("button")
+    btn.addEventListener("click",()=>{
       
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-              Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Collapsible Group Item #2
-              </button>
-            </h2>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-              Some placeholder content for the second accordion panel. This panel is hidden by default.
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h2 class="mb-0">
-              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Collapsible Group Item #3
-              </button>
-            </h2>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-              And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
-            </div>
-          </div>
-        </div>
-    </div> -->
+      if(container.classList.contains("matteo")){
+        container.style.display = "block"
+        setTimeout(()=>{
+            
+            container.classList.remove('matteo')
+          },500)
+      }
+      else {
 
-</body>
+        container.classList.add('matteo')
+        setTimeout(()=>{
+            container.style.display = "none"
+          },500)
+      }
+    })
+
+  </script>
 </html>

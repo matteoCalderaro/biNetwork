@@ -1,321 +1,82 @@
-@{
-  int ID_Role = 0;
-  if (Session["userName"] != null)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .container{
+        height: 50px;
+        background-color: red;
+      }
+      .container.show{
+        animation: show 1s ease-out;
+      }
+      .container.hide{
+        animation: hide 1s ease-out;
+        display: none;
+      }
+      @keyframes show {
+        0% {
+          height: 0px;
+        }
+        20%{
+          height: 30px;
+        }
+        100% {
+          height: 50px;
+        }
+      }
+      @keyframes hide {
+        0% {
+        
+          height: 50px;
+        }
+        20%{
+          height: 30px;
+        }
+        100% {
+          height: 0px;
+        }
+    
+      }
+      
+     
+    
+    
+  </style>
+</head>
+<body>
+    <button>Click</button>
 
-  {
-      ID_Role = Convert.ToInt16(Session["Roles"].ToString());
-  }
-  //else
-  //{
-  //    Response.Redirect("~/Login/SessionExpired");
-  //}
-}
-
-@if (Session["userName"] != null)
-{
-  <!DOCTYPE html>
-  <html>
-  <head>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-      <!-- Index-->
-      <base href="./">
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-      <title>Dashboard Nova aeg: Trading</title>
-      <link rel="icon" type="image/vnd.microsoft.icon" href="~/Content/assets/favicon/favicon.ico" />
-      <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="~/Content/assets/favicon/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="57x57" href="~/Content/assets/favicon/apple-icon-57x57.png" />
-      <link rel="apple-touch-icon" sizes="72x72" href="~/Content/assets/favicon/apple-icon-72x72.png" />
-      <link rel="apple-touch-icon" sizes="114x114" href="~/Content/assets/favicon/apple-icon-114x114.png" />
-      <link rel="apple-touch-icon" sizes="144x144" href="~/Content/assets/favicon/apple-icon-144x144.png" />
-      <meta name="theme-color" content="#000000">
-
-      <!-- Vendors styles-->
-      <link rel="stylesheet" href="~/Content/css/vendors/simplebar.css">
-      <!-- Main styles for this application-->
-      <link href="~/Content/css/style.css" rel="stylesheet">
-      <!--new part-->
-      <link href="~/Content/css/custom.css" rel="stylesheet">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-      <link href=" ~/Content/vendors/coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
-
-      <!-- Richieste-->
-      <!-- Main styles for this application-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="http://code.jquery.com/jquery.js"></script>
-      <style>
-
-          /* Set the style for the navigation menus */
-          nav ul {
-              list-style: none;
-              margin: 0;
-              padding-left: 0;
-          }
+    <div class="container" style="display: none;">
+        
+    </div>
+    <div style="background-color: green; height: 1000px;">
+          ciao
+    </div>
 
 
+    <script>
+      let container = document.querySelector(".container")
+      let btn = document.querySelector("button")
+      btn.addEventListener("click",()=>{
+        if(container.style.display=== "none"){
+          container.classList.add('show')
+          container.classList.remove('hide')
+          container.style.display = "block"
+        }
+        else {
+          container.classList.remove('show')
+          container.classList.add('hide')
+          return setTimeout(()=>{
+            container.style.display = "none"
+          },1000)
+        }
+      })
+      
+    </script>
+    
 
-          nav a:hover,
-          nav li:focus-within > a {
-              background: #245975;
-              cursor: pointer;
-          }
-
-          /* Make the dropdown animate. */
-          .dropdown-content {
-              min-width: max-content;
-              overflow: hidden;
-              max-height: 0;
-              transition: max-height 1s;
-          }
-
-          /* The max-height should be set to something that will always be a little bit bigger than the height of the content. */
-          .dropdown:hover .dropdown-content,
-          .dropdown:focus .dropdown-content,
-          .dropdown:focus-within .dropdown-content {
-              max-height: 200px;
-          }
-
-          /* This makes the top-level navigation horizontal on desktop, and vertical on smaller screens. */
-
-      </style>
-  </head>
-  <body>
-      <div class="sidebar sidebar-dark sidebar-fixed" style="background-color: #1c1c1c;" id="sidebar">
-          <div class="sidebar-brand d-none d-md-flex bg-black">
-              <img class="sidebar-brand-full" width="160" height="50" src="~/Content/assets/brand/logo_new.png" alt="Nova aeg">
-              <img class="sidebar-brand-narrow" width="46" height="46" src="~/Content/assets/brand/mini-logo.svg" alt="Nova aeg">
-          </div>
-
-
-          <nav role="navigation">
-              <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-                  <li class="nav-item">
-                      <a class="nav-link" href="@Url.Action("Index", "Home")">
-                          <svg class="nav-icon">
-                              <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                          </svg> Home
-                      </a>
-                  </li>
-
-
-                  <li class="nav-item dropdown">
-                      <a class="nav-link" href="javascript:void(0);" aria-haspopup="true">
-                          <svg class="nav-icon">
-                              <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                          </svg> Controllo di Gestione
-                      </a>
-                      <ul class="dropdown-content" aria-label="submenu">
-                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("BreveTermine", "ControlloGestione")">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Breve termine
-                              </a>
-                          </li>
-                          @*<li class="nav-item">
-                                  <a class="nav-link" href="@Url.Action("ControlloGestioneBilancioEnergetico", "Home")">
-                                      <svg class="nav-icon">
-
-                                      </svg>
-                                      Bilancio Energetico
-                                  </a>
-                              </li>*@
-                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("FonteImpieghi", "ControlloGestione")">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Fonte Impieghi
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                      <a class="nav-link" href="javascript:void(0);" aria-haspopup="true">
-                          <svg class="nav-icon">
-                              <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                          </svg> Trading
-                      </a>
-                      <ul class="dropdown-content" aria-label="submenu">
-                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("", "Home")">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Lavagna Open Position
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                      <a class="nav-link" href=" javascript:void(0);)">
-                          <svg class="nav-icon">
-                              <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                          </svg> Forecast
-                      </a>
-                      <ul class="dropdown-content" aria-label="submenu">
-                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("Forecast", "Forecast")">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Forecast
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Preconsultivo
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Cluster
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                      <a class="nav-link" href="javascript:void(0);" aria-haspopup="true">
-                          <svg class="nav-icon">
-                              <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                          </svg> Unità di Produzione
-                      </a>
-                      <ul class="dropdown-content" aria-label="submenu">
-                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("", "Home")">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Rebuyer
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                      <a class="nav-link" href="javascript:void(0);" aria-haspopup="true">
-                          <svg class="nav-icon">
-                              <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                          </svg> Gas
-                      </a>
-                      <ul class="dropdown-content" aria-label="submenu">
-                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("", "Home")">
-                                  <svg class="nav-icon">
-
-                                  </svg>
-                                  Previsioni
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-
-                  @*<li class="nav-item">
-                          <a class="nav-link" href="@Url.Action("Misure", "Home")">
-                              <svg class="nav-icon">
-                                  <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                              </svg> Misure
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="@Url.Action("UnitaProduzione", "Home")">
-                              <svg class="nav-icon">
-                                  <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                              </svg> Unita di Produzione
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="@Url.Action("Gas", "Home")">
-                              <svg class="nav-icon">
-                                  <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-book"></use>
-                              </svg> Gas
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="@Url.Action("Impostazioni", "Home")">
-                              <svg class="nav-icon">
-                                  <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-settings"></use>
-                              </svg> Impostazioni
-                          </a>
-                      </li>*@
-              </ul>
-          </nav>
-
-
-
-          <button class="sidebar-toggler fixed-bottom" type="button" data-coreui-toggle="unfoldable"></button>
-      </div>
-      <div class="wrapper d-flex flex-column min-vh-100 bg-light" style="background-color: #e8eae9!important;">
-          <header class="header header-sticky mb-4 bg-black">
-              <div class="container-fluid">
-                  <button class="header-toggler px-md-0 me-md-3 d-lg-none text-white" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-                      <svg class="icon icon-lg">
-                          <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-menu"></use>
-                      </svg>
-                  </button>
-                  <a class="header-brand d-md-none" href="#">
-                      <img class="sidebar-brand-narrow" width="46" height="46" src="~/Content/assets/brand/mini-logo.svg" alt="Nova aeg">
-                  </a>
-                  <h4 class="text-white d-none d-lg-block">Nova aeg: Trading</h4>
-                  <ul class="header-nav ms-auto">
-                      <li class="nav-item dropdown">
-                          <a class="nav-link py-0 text-white" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                              <div class="avatar avatar-md">
-                                  <svg class="icon icon-lg">
-                                      <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-user"></use>
-                                  </svg>
-                              </div>Novaaeg
-                          </a>
-                          <div class="dropdown-menu dropdown-menu-end pt-0">
-                              <div class="dropdown-header bg-light py-2">
-                                  <div class="fw-semibold">Account</div>
-                              </div>
-                              <a class="dropdown-item" href="@Url.Action("LogOut", "Login")">
-                                  <svg class="icon me-2">
-                                      <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-account-logout"></use>
-                                  </svg> Logout
-                              </a>
-                          </div>
-                      </li>
-                      @if (!Request.Url.AbsoluteUri.Contains("/Home/"))
-                      {
-                          <li class="nav-item dropdown">
-                              <a class="nav-link py-0 text-white" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="filters">
-                                  <div class="avatar avatar-md">
-                                      <svg class="icon icon-lg">
-                                          <use xlink:href="~/Content/vendors/coreui/icons/svg/free.svg#cil-filter"></use>
-                                      </svg>
-                                  </div>
-                              </a>
-                          </li>
-                      }
-                  </ul>
-              </div>
-          </header>
-          @RenderBody()
-          <footer class="footer">
-              <div><small>Trading &copy; 2024 Nova aeg</small></div>
-              <div class="ms-auto"><small>Powered by&nbsp;<a href="https://www.binetwork.it/" target="_blank">BI Network</a></small></div>
-          </footer>
-      </div>
-  </body>
+</body>
 </html>
-}
