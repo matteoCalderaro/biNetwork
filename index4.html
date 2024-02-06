@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      #filtersContainer.show {
+    animation: show 1s cubic-bezier(0.57, 0.03, 1, 0.53);
+}
+
+#filtersContainer.hide {
+    animation: hide 1s ease;
+}
+
+@keyframes show {
+    0% {
+        max-height: 0px;
+        /*opacity: 0*/
+    }
+
+    100% {
+        max-height: 2000px;
+        /*opacity: 1*/
+    }
+}
+
+@keyframes hide {
+    0% {
+        max-height: 2000px;
+        /*opacity: 1*/
+    }
+
+    100% {
+        max-height: 0px;
+        /*opacity: 0*/
+    }
+}
+
+</style>
+
+</head>
+<body>
+    <button id="filters">Click</button>
+
+    <div id="filtersContainer" style="display: none;">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero, iure assumenda cum eius quia! Voluptatibus sint temporibus minima aliquam mollitia aspernatur fugit, accusantium vitae quos libero dolorem dolores possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero, iure assumenda cum eius quia! Voluptatibus sint temporibus minima aliquam mollitia aspernatur fugit, accusantium vitae quos libero dolorem dolores possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero, iure assumenda cum eius quia! Voluptatibus sint temporibus minima aliquam mollitia aspernatur fugit, accusantium vitae quos libero dolorem dolores possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero, iure assumenda cum eius quia! Voluptatibus sint temporibus minima aliquam mollitia aspernatur fugit, accusantium vitae quos libero dolorem dolores possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero, iure assumenda cum eius quia! Voluptatibus sint temporibus minima aliquam mollitia aspernatur fugit, accusantium vitae quos libero dolorem dolores possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero, iure assumenda cum eius quia! Voluptatibus sint temporibus minima aliquam mollitia aspernatur fugit, accusantium vitae quos libero dolorem dolores possimus.Lorem ipsum dolor sit amet consectetur </div>
+    </div>
+    <div style="background-color: red; height: 1000px;z-index: 100;position: relative;">
+          ciao
+    </div>
+    <script>
+      let btn = document.querySelector("#filters")
+      let container = document.querySelector("#filtersContainer")
+      btn.addEventListener("click", (e) => {
+          e.preventDefault()
+          console.log(container)
+          if (container.style.display === "none") {
+              container.classList.add('show')
+              container.classList.remove('hide')
+              container.style.display = "block"
+          } else {
+              container.classList.remove('show')
+              container.classList.add('hide')
+              setTimeout(() => {
+                  container.style.display = "none"
+              }, 950)
+          }
+      })
+  
+    </script>
+
+
+ 
+    
+
+</body>
+</html>
